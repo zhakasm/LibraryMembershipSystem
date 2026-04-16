@@ -107,4 +107,4 @@ Invalid email format
 
 ## 🔗 Presentation Link
 
-(Add your Google Slides / Canva link here)
+(https://canva.link/pgtgvcywuhce52f)
