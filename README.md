@@ -2,14 +2,20 @@
 
 ## 👩‍💻 Student
 
-Sabirova Zharkynai
+Sabyrova Zharkynai
 
 ## 📌 Project Description
 
-Library Membership System is a console-based Java application that manages library members.
-It allows users to register, update, delete, renew, and cancel memberships.
-
-The system uses Object-Oriented Programming principles and stores data in files for persistence.
+Library Membership System is a console-based Java application designed to manage library members efficiently.
+The system allows users to:
+register new members
+view all members
+update member information
+delete members
+renew memberships
+cancel memberships
+export data to CSV files
+All data is stored in files, ensuring persistence between program runs.
 
 ---
 
@@ -25,62 +31,84 @@ The system uses Object-Oriented Programming principles and stores data in files 
 
 ## ✅ Project Requirements
 
-1. Register new member
-2. View all members
-3. Search member by ID
-4. Update member
-5. Delete member
-6. Renew membership
-7. Cancel membership
-8. Save data to file
-9. Load data from file
-10. Input validation
+1. Create (register member)
+2. Read (view members)
+3. Update member
+4. Delete member
+5. Renew membership
+6. Cancel membership
+7. Data persistence using file storage
+8. Input validation
+9. Modular code structure
+10. Export data to CSVSearch member by ID
 
 ---
 
-## 🧠 OOP Concepts Used
+## 🧠 OOP Principles
 
-### Encapsulation
+### 🔹 Encapsulation
 
-* Private fields in Member class
-* Getters and setters
+* All fields in classes are private
+* Access controlled using getters and setters
 
-### Inheritance
+### 🔹 Inheritance
 
-* PremiumMember extends Member
+* `PremiumMember` class extends `Member`
 
-### Polymorphism
+### 🔹 Polymorphism
 
-* getMembershipDetails() method overridden
+* Method `getMembershipDetails()` is overridden in child class
 
 ---
 
-## 🗂 Project Structure
+## 🏗 Project Structure
 
-* models → Member, PremiumMember
-* services → MemberService
-* utils → FileHandler, Validator
-* data → members.txt
-* Main.java
+```
+models/
+ ├── Member.java
+ ├── PremiumMember.java
+
+services/
+ ├── MemberService.java
+
+utils/
+ ├── FileHandler.java
+ ├── Validator.java
+
+data/
+ ├── members.txt
+ ├── members.csv
+
+Main.java
+README.md
+```
 
 ---
 
 ## 💾 Data Storage
 
-Data is stored in a text file (members.txt) and loaded when the program starts.
+* Data is stored in `members.txt`
+* Automatically loaded when the program starts
+* Automatically saved when exiting
 
 ---
 
-## ⚠️ Validation
+## 📤 CSV Export
 
-* Email must contain "@" and "."
+The system allows exporting all members to a CSV file (`members.csv`), which can be opened in Excel.
+
+---
+
+## ⚠️ Input Validation
+
 * Name cannot be empty
+* Email must contain "@" and "."
 
 ---
 
 ## 🧪 Test Cases
 
-### Example 1:
+### ✔ Valid Input
 
 Input:
 Name: John
@@ -91,20 +119,37 @@ Member added successfully
 
 ---
 
-### Example 2:
+### ❌ Invalid Email
 
-Invalid email:
+Input:
+Email: johnmail
+
 Output:
 Invalid email format
 
 ---
 
+### ✔ Delete Member
+
+Input:
+ID: 1
+
+Output:
+Member deleted
+
+---
 ## 📸 Screenshots
 
-(Add screenshots here with date & time visible)
+(https://drive.google.com/drive/folders/1RUQ7x5hvlO6Gzwm5eO9n-OAlIogxCwjs?usp=sharing)
 
 ---
 
 ## 🔗 Presentation Link
 
 (https://canva.link/pgtgvcywuhce52f)
+
+---
+
+## 🚀 Conclusion
+
+This project successfully demonstrates the use of Java, OOP principles, file handling, and user input validation to build a functional real-world system.
