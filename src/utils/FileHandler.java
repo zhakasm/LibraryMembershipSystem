@@ -45,7 +45,6 @@ public class FileHandler {
 
                 Member member;
 
-                // Можно улучшить, но пока так
                 if (name.toLowerCase().contains("premium")) {
                     member = new PremiumMember(id, name, email);
                 } else {
@@ -64,5 +63,32 @@ public class FileHandler {
         }
 
         return members;
+    }
+
+    // 🔥 NEW: EXPORT TO CSV
+    public static void exportToCSV(List<Member> members) {
+        String fileName = "data/members.csv";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+
+            writer.write("ID,Name,Email,Active,Type");
+            writer.newLine();
+
+            for (Member m : members) {
+                writer.write(
+                        m.getId() + "," +
+                                m.getName() + "," +
+                                m.getEmail() + "," +
+                                m.isActive() + "," +
+                                m.getMembershipDetails()
+                );
+                writer.newLine();
+            }
+
+            System.out.println("Data exported to CSV!");
+
+        } catch (IOException e) {
+            System.out.println("Error exporting CSV.");
+        }
     }
 }

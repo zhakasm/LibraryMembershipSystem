@@ -13,7 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         MemberService service = new MemberService();
 
-        // Загрузка данных из файла
+        // Load data
         service.setMembers(FileHandler.loadFromFile());
 
         while (true) {
@@ -24,10 +24,11 @@ public class Main {
             System.out.println("4. Delete Member");
             System.out.println("5. Renew Membership");
             System.out.println("6. Cancel Membership");
-            System.out.println("7. Exit");
+            System.out.println("7. Export to CSV");
+            System.out.println("8. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // очистка буфера
+            scanner.nextLine();
 
             switch (choice) {
 
@@ -99,6 +100,10 @@ public class Main {
                     break;
 
                 case 7:
+                    FileHandler.exportToCSV(service.getAllMembers());
+                    break;
+
+                case 8:
                     FileHandler.saveToFile(service.getAllMembers());
                     System.out.println("Goodbye!");
                     return;
